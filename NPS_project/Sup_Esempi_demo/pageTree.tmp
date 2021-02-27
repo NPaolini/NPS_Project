@@ -1,0 +1,12 @@
+[1]	{psw 0}	CPK_CMK  
+[1]	{psw 0}	PagTrend  
+[1]	{psw 0}	PagRicetta  
+[1]	{psw 0}	TrendOggetto  
+[1]	{psw 0}	PaginaAllarmi  
+[1]	{psw 0}	PagineIndicizzate  
+[1]	{psw 0}	ProvePulsanti  
+[2]	{psw 0}	ProvePulsanti2  
+[1]	{psw 3}	SETUP_1  
+[2]	{psw 0}	Setup IO_1  
+[2]	{psw 0}	Setup IO_2  
+[1]	{psw 0}	PagTabelle  

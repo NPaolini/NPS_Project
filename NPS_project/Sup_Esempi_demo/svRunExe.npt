@@ -1,0 +1,31 @@
+
+--------   DLL_runProgr.DLL    ---------------
+----------------------------------------------
+codice per ricaricare questo testo
+id, prph, addr, type, nbit, offs
+10,1,100,1,1,0
+----------------------------------------------
+Sono disponibili 10 blocchi per assegnare ad una variabile di tipo 4 32 possibili
+eseguibili da avviare (ciascuno abbinato al bit corrispondente).
+Il primo valore è l'id di inizio delle righe degli eseguibili, segue prph e addr,
+segue poi un flag per indicare se il programma va avviato nascosto, zero o non
+presente -> visibile, uno -> nascosto, due -> iconizzata
+
+11,101,1,60,0
+;12,201,1,21
+;...
+;20,...
+
+----- primo blocco ---------------------------
+101,C:\\WINDOWS\\system32\\calc.exe
+102,testconn.exe
+;103,
+;...
+;132,
+----- secondo blocco -------------------------
+;201,
+;202,
+;203,
+;...
+;232,
+----- ecc. -----

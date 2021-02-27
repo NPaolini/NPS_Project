@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>Domotica by NPS</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+<meta name="author" content="ennepiesse" />
+<meta name="keywords" content="ennepisoft" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="shortcut icon" href="nps.ico" type="image/x-icon" />
+<script src="canvtext.js"></script>
+<script src="canvas.js"></script>
+<script src="code.js"></script>
+</head>
+<body>
+<div id="glob">
+  <div id="main">
+    <div id="header"></div>
+    <div class="cont">
+      <h1>Sensori</h1>
+      <p>Temperature: <span id="idTemper1">...</span> °C | <span id="idTemper2">...</span> °C | <span id="idTemper3">...</span> °C</p>
+      <p>Umidità: <span id="idHumid1">...</span>% | Temperatura: <span id="idHumid2">...</span> °C | Percepita: <span id="idHumid3">...</span> °C</p>
+      <hr />
+      <h1>Gestione allarmi</h1>
+      <form onSubmit="return false">
+        <table class='alarm'>
+          <tr>
+            <td style="width:280px;">Allarme</td>
+            <td style="width:30px;"><div id="idAlarm0a" class='circle grey'><div class='glare'></div></div></td>
+            <td class='w1'><input type="button" value="On/Off" onClick="mainLoop('x=e0')" class='menuBtnItem' /></td>
+            <td class='w2'><div id="idAlarm0b" class='circle grey'><div class='glare'></div></div></td>
+            <td><input type="button" value="Ack" onClick="mainLoop('x=a0')" class='menuBtnItem' /></td>
+          </tr>
+          <tr><td colspan=5 style="border-bottom:1px solid;"></td></tr>
+          <tr id="idAlarm1"></tr><tr id="idAlarm2"></tr><tr id="idAlarm3"></tr><tr id="idAlarm4"></tr><tr id="idAlarm5"></tr><tr id="idAlarm6"></tr><tr id="idAlarm7"></tr><tr id="idAlarm8"></tr>
+          <tr><td colspan=5 style="border-bottom:1px solid;"></td></tr>
+        </table>
+        <table class='alarm'>
+          <tr>
+            <td style='width:150px;'></td><td>Tutti</td>
+            <td><input type="button" value="Includi" onClick="mainLoop('x=x1,255,0')" class='menuBtnItem' /></td>
+            <td><input type="button" value="Escludi" onClick="mainLoop('x=x1,255,1')" class='menuBtnItem' /></td>
+            <td style='width:250px;'></td>
+          </tr>
+        </table>
+      </form>
+      <hr />
+
+      <h1>Comando Tapparelle</h1>
+      <form onSubmit="return false">
+        <table class='fullWidth'>
+          <tr id="idShutter1"></tr><tr><td colspan="2"><hr /></td></tr><tr id="idShutter3"></tr><tr><td colspan="2"><hr /></td></tr>
+          <tr><td colspan="2">
+            <table class='alarm fullWidth center'>
+              <tr><td>Apri tutte</td><td>Chiudi tutte</td></tr>
+              <tr><td><div id="idBtnMotC1" onClick="chgMotor('Z1')" class='m_up'></div></td><td><div id="idBtnMotC1" onClick="chgMotor('Z0')" class='m_down'></div></td></tr>
+            </table></td>
+          </tr>
+        </table>
+      </form>
+      <hr />
+
+      <h1>Comando Luci</h1>
+      <form onSubmit="return false">
+        <table id='idRele' class='alarm fullWidth'></table>
+      </form>
+      <hr />
+      <h1>CronoTermostato</h1>
+      <form onSubmit="return false">
+        <table class='tblform crono'>
+          <tr>
+            <td style='width:60%'>
+              <table class="table_no_border">
+                <tr>
+                  <td style='width:90%'>Cronotermostato: <span id='idCronoOff'>...</span></td>
+                  <td><div id="idCronOffLed" class='circle grey'><div class='glare'></div></div></td>
+                </tr>
+              </table>
+            </td>
+            <td><input  id='idCronoOffBtn' type="button" value="ON/OFF" onClick="mainLoop('c=A')" class='menuBtnItem' /></td>
+          </tr>
+          <tr>
+            <td>
+              <table class="table_no_border">
+                <tr>
+                  <td style='width:90%'>Funzionamento: <span id='idCronoManual'>...</span> - Stato: <span id='idCronStatus'></span></td>
+                  <td><div id="idCronStatusLed" class='circle grey'><div class='glare'></div></div></td>
+                </tr>
+              </table>
+            </td>
+            <td><input id='idCronoManualBtn' type="button" value="Auto/Man" onClick="mainLoop('c=B')" class="menuBtnItem" /></td>
+          </tr>
+          <tr>
+            <td><p>Temperatura in manuale: <span id='idCronoManualTemper'>...</span></p></td>
+            <td>
+              <p>Nuova  <input type="text" id="impManTemper" size=5 maxlength=5 />
+                <input type="button" value="Imposta" onClick="setManualTemper('impManTemper')" class="menuBtnItem f_right" />
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Impostata: <span id="idCronoCurrTemper">...</span></p></td>
+            <td><p>Temperatura attuale: <span id="idCronoActTemper">...</span></td>
+          </tr>
+          <tr><td colspan=2><div><input type="button" value="Data-Ora" onClick="sendDateTime()" class='menuBtnItem f_none' /></div></td></tr>
+        </table>
+      </form>
+    </div>
+    <div class="cont" style="margin:auto;"><canvas id="cv" width="800" height="120"></canvas><canvas id="ax" width="800" height="20"></canvas></div><br />
+    <div class='menuBtn'>
+      <form id='idmenuBtn' onSubmit="return false"></form>
+    </div><br />
+    <table id='idCrono' class='tblform'></table>
+    <form onSubmit="return false"><br />
+      <div class='cont tblform' style='text-align:center; width:auto'>
+        <span>Copia blocco da: </span>
+        <span><select id='idGroupWeek'></select> <input type="button" value="Invia" onClick="copyGroup()" class="menuBtnItem f_none" /></span>
+        <br /><hr /><br />
+        <span>Imposta temperatura  <input type="text" id="impTemper" size=5 maxlength=5 />
+        dalle ore: <input type="text" id="timeFrom" size=5 maxlength=5 />
+         alle ore: <input type="text" id="timeTo" size=5 maxlength=5 />
+        <input type="button" value="Imposta" onClick="setRange('impTemper', 'timeFrom', 'timeTo')" class="menuBtnItem f_none" />
+        </span>
+        <hr />
+        <input id="logout" type="button" value="Logout" onClick="mainLoop('o')" class='menuBtnItem f_none' style='color:red;' />
+      </div>
+    </form>
+  </div>
+</div>
+</body>

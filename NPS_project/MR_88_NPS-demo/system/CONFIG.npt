@@ -1,0 +1,103 @@
+Titolo, corrisponde all'id del dialogo
+502,Configurazione
+
+gli id corrispondono a quelli dei controlli
+
+2190,Usa Mouse
+2191,ShutDown
+2192,NumLock attivo
+
+2195,Nascondi Taskbar
+2209,No Poweroff
+
+specifico per win9x, è controllato solo il primo
+,2196,Disattiva SYSKEY
+
+su winNT si possono scegliere, ma non si disabilita il CTRL+ALT+CANC
+2196,Disattiva ALT
+2197,Disattiva CTRL
+2198,Disattiva WIN_KEY
+
+2240,Programmi di comunicazione con periferiche
+2200,Mixer
+2201,Prph 3
+2202,Prph 4
+2203,Prph 5
+2204,Prph 6
+2205,Prph 7
+2206,Prph 8
+2207,Prph 9
+
+2241,Parametri di comunicazione
+2230,Parametri
+2231,Parametri
+2232,Parametri
+2233,Parametri
+
+,2242,Impostazioni Generali
+,2280,Lettura Correnti
+,2265,PLC
+,2266,Azionamenti
+,2255,%
+,2256,Reale
+
+,2281,Lettura Velocità
+,2267,PLC
+,2268,Azionamenti
+
+,2271,Ventilazione Passi
+,2259,Singola
+,2260,Globale
+
+,2270,Filiere Rotanti
+,2272,Svolgitore
+
+,2274,Bobinatore
+
+,2273,Blocco Accumulo
+,2257,1
+,2258,2
+
+2284,Offset Plc
+,2286,Numero Blocchi
+
+2193,>> Normalizzatori >>
+,2194,>> Turni >>
+2300,Lingua
+
+Titolo, corrisponde all'id del dialogo
+501,Normalizzatori e Varie
+
+1101,Normalizzatori
+1102,Gruppo di valori
+,1190,Max Corrente Motori
+,1191,Max Velocità Motori
+,1192,Normalizz. Velocità
+1190,Normalizz. Velocità
+1191,Normalizz. Correnti
+1192,Max Corrente Motori
+
+1103,Normalizz. Velocità
+
+,1181,Leggi da File
+,1180,Salva su File
+,1182,Leggi dal PLC
+,1183,Invia al PLC
+
+I normalizzatori in cima alla finestra
+1105,k_tiro_1
+1106,k_tiro_2
+1107,k_tiro_3
+1108,tempi sec.
+1109,k_integr.vel.
+1110,vel. raddr.
+1115,fatt. mm-imp
+1116,spessore
+
+descrizione per ultimi quattro dei gruppi
+1111,diam. avv.
+1112,diam. svolg.
+1113,
+1114,
+
+

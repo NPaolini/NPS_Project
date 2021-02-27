@@ -1,0 +1,12 @@
+porta di ascolto
+10,3100
+
+nome del server (opzionale, non viene utilizzato)
+11,svServer
+
+password di connessione (max 15 caratteri)
+12,pswServer
+
+tempo di attesa per il pacchetto di acknoledge, se non arriva
+entro questo tempo (in msec) la connessione viene chiusa
+13,60000

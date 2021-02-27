@@ -1,0 +1,21 @@
+---------------------------------------------------------------
+rettangoli: X,Y,Larghezza,Altezza
+4,100,150,1800,80
+4,100,240,1800,120
+4,100,370,1800,40
+
+--- Titolo
+Font
+6,24,0,2,arial
+Testo: X,Y,Testo
+1,110,155,Siei Sistemi
+
+--- Nome Ricetta
+Font
+6,14,0,0,arial
+Testo: X,Y,Testo
+1,110,250,COIL:
+Font
+6,30,0,2,arial
+Variabile: X,Y,Indice Variabile (vedere file -info.txt)
+51,300,250,0

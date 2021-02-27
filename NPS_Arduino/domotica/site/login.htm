@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>Login</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="ennepiesse" />
+<meta name="keywords" content="ennepisoft" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="shortcut icon" href="nps.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="glob" style='padding-top:50px;'>
+<div id="main">
+<div id="header"><h1 style='color:#ca3b3b;'>Area di Accesso</h1></div>
+<div class="cont">
+<form id="Login" method="post" action="index.htm">
+<!-- <form id="Login"> -->
+  <table class='border' style='width:400px;'>
+    <tr>
+      <td class="td1">User name:</td>
+      <td  class="td2">
+        <input type="text" name="UserName" id='UserName'>
+      </td>
+    </tr>
+    <tr>
+      <td class="td1">Password:</td>
+      <td>
+        <input type="password" name="UserPass">
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><br />
+        <input type="submit" name="Submit" value="Enter">
+        &nbsp;&nbsp;
+        <input type="reset" name="Submit2" value="Reset">
+      </td>
+    </tr>
+  </table>
+</form>
+<script>document.getElementById('UserName').focus();</script>
+<br />
+</div>
+</div>
+</div>
+</body>
+</html>
